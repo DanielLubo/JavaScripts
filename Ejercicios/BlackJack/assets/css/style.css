@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --Button-Color-Primary: #0097e6;
+    --Button-Color-Secundary: #44bd32;
+    --Button-Color-Terciary: #EA2027;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F0F2F2;
+    font-family: "Montserrat", sans-serif;
+}
+
+.Header{
+    display: flex;
+    justify-content: center;
+    padding: 40px 0px 20px;
+}
+
+.Hedaer__Tittle{
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+
+/* Menu */
+.Menu{
+    padding: 20px 200px;
+}
+
+.Menu__Options{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.Options__Button{
+    font-family: "Montserrat", sans-serif;
+    color: #F0F2F2;
+    background-color: var(--Button-Color-Primary);
+    width: 200px;
+    height: 60px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.New__Game{
+    background-color: var(--Button-Color-Secundary);
+}
+
+.Stop__Game{
+    background-color: var(--Button-Color-Terciary);
+}
+
+
+/* Container */
+.Container{
+    padding: 20px 100px 0px;
+}
+
+.Name__Player{
+    
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.Cards__Game{
+    height: 250px;
+}
+
+.Card{
+    position: relative;
+    height: 250px;
+    left: 100px;
+    margin-left: -75px;
+}
