@@ -34,6 +34,8 @@ const diaConMayorGasto = () => {
 
     gastos.forEach(gasto => {
         const {fecha, monto} = gasto;
+        //const fecha = gasto.fecha;
+        //const monto = gasto.monto;
         gastosDiarios[fecha] = (gastosDiarios[fecha] || 0) + monto;
     })
 
@@ -57,5 +59,35 @@ const diaConMayorGasto = () => {
     }
 };
 
+//Promedio de gasto diario
+const gastoDiario = () => {
+    const gastosPorDia = gastos.reduce((acumulador, gasto) =>{
+        const {fecha, monto} = gasto;
+        acumulador[fecha] = (acumulador[fecha] || 0) + monto;
+        // acumulador[fecha] ? acumulador[fecha] += monto : acumulador[fecha] = monto;
+        return acumulador;
+    }, {});
+
+    const valoresGastos = Object.values(gastosPorDia);
+
+    const sumaTotalGastos = valoresGastos.reduce((suma, valor) => {
+        return suma + valor;
+    }, 0);
+
+    const promedio = sumaTotalGastos / valoresGastos.length;
+    console.log(`El promedio de gastos por dia es: ${promedio}`);
+}
+
+//¿Se excedió el presupuesto mensual? (parámetro: presupuesto)
+const verificarExcesoPresupuesto = ( presupuesto ) => {
+    const valorGasto = gastos.reduce((total, gasto) => {
+        return total + gasto.monto;
+    }, 0);
+    return valorGasto > presupuesto;
+}
+
 diaConMayorGasto();
 gastosPorCategoria('Pasajes');
+gastoDiario();
+
+console.log("¿Se excedió el presupuesto?", verificarExcesoPresupuesto(200000));

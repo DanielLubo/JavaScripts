@@ -26,7 +26,7 @@ const average = ( dep ) => {
             return sum + empleado.salario;
         }, 0);
 
-        const averageSalary =totalSalaries / averageDeparment.length;
+        const averageSalary = totalSalaries / averageDeparment.length;
         console.log(`El salario promedio del departamento de ${dep} es: $${averageSalary.toLocaleString('es-CO')}`);
     } else {
         console.log(`El departamento con nombre: ${dep}, no se ha encontrado`);
