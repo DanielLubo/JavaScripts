@@ -119,7 +119,5 @@ const productosCategoria = productosDos.reduce((acc, item, index) => {
 console.log(productosCategoria);
 
 
-const promedio = productosDos.reduce((acc, producto) => acc + producto.precio, 0);
-const precioPromedio = promedio / productosDos.length;
-
-console.log(precioPromedio);
+const sumaPrecios = productosDos.reduce((acc, producto) => acc + producto.precio, 0) / productosDos.length;
+console.log(sumaPrecios);
